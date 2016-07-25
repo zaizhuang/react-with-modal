@@ -7,8 +7,8 @@ var nodeExternals = require('webpack-node-externals');
 const config = {
     entry: path.join(__dirname, 'index.js'),
     output: {
-        path: path.join(__dirname, 'lib'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, 'dist'),
+        filename: 'react-bootstrap-modal-wrapper.js'
     },
     resolve: {
         extensions: ['', '.js'],
