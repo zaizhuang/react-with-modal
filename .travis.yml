@@ -5,5 +5,7 @@ node_js:
     - "5"
     - "4"
     - "stable"
+script:
+    - npm run test:cov
 after_success:
     - bash <(curl -s https://codecov.io/bash)

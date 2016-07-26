@@ -7,7 +7,8 @@
     "build": "npm run build:lib",
     "build:lib": "babel src --out-dir lib",
     "prepublish": "npm run build",
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha",
+    "test:cov": "./node_modules/.bin/babel-node node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- 'test/*.js' --require test/setup.js"
   },
   "author": "Zaizhuang Cheng",
   "license": "MIT",
@@ -16,8 +17,6 @@
     "react-dom": "^15.2.1"
   },
   "devDependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
@@ -29,9 +28,12 @@
     "enzyme": "^2.4.1",
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
+    "istanbul": "^1.1.0-alpha.1",
     "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
+    "react": "^15.2.1",
     "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.2.1",
     "sinon": "^1.17.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
