@@ -3,7 +3,7 @@ react-bootstrap-modal-wrapper
 A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
 ## Use this bootstrap modal component if:
-- You want a lightweight component. It has no external dependencies except for React and React-DOM.
+- You want a lightweight component. It has no external dependencies except for React.
 - You use Bootstrap v4.
 - You prefer using higher order components to keep state out of your UI components. 
 
