@@ -45,6 +45,9 @@ class Example extends React.Component {
 export default withModal(Example);
 ```
 
+## Styling
+
+[Bootstrap v4](http://v4-alpha.getbootstrap.com/) styles aren't included automatically with this component, and you need to add it to your app separately.
 
 ## Demo & Examples
 
