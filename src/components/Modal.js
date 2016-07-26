@@ -42,19 +42,16 @@ class Modal extends React.Component {
     }
 
     setUp () {
-        if (document && document.body) {
-            var orig = document.body.className;
-            document.body.className = orig + ' modal-open';
-            document.addEventListener('keydown', this.onEscKeyDown);
-        }
+        document.body.className = document.body.className + ' modal-open';
+        document.addEventListener('keydown', this.onEscKeyDown);
     }
 
     cleanUp () {
         this.setState({ isOpen: false });
-        if (document && document.body) {
-            document.body.className = document.body.className.replace(/ ?modal-open/, '');
-            document.removeEventListener('keydown', this.onEscKeyDown);
-        }
+
+        document.body.className = document.body.className.replace(/ ?modal-open/, '');
+        document.removeEventListener('keydown', this.onEscKeyDown);
+
         this.timerIds.forEach((timerId) => {
             window.clearTimeout(timerId);
         });
@@ -68,6 +65,8 @@ class Modal extends React.Component {
 
     close () {
         this.setState({ isFadeIn: false });
+
+        // delay cleanup so animations can complete before closing
         this.timerIds.push(window.setTimeout(this.cleanUp, 300));
     }
 
