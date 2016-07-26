@@ -1,5 +1,5 @@
-import Modal from 'src/components/Modal';
-import withModal from 'src/wrappers/withModal';
+import Modal from './components/Modal';
+import withModal from './wrappers/withModal';
 
 export {
     Modal,
