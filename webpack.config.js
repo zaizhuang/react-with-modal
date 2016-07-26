@@ -3,7 +3,7 @@
 var path = require('path');
 
 const config = {
-    entry: path.join(__dirname, 'index.js'),
+    entry: path.join(__dirname, 'examples', 'index.js'),
     output: {
         path: path.join(__dirname, 'build'),
         publicPath: '/assets/',
