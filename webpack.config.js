@@ -7,7 +7,7 @@ const config = {
     output: {
         path: path.join(__dirname, 'build'),
         publicPath: '/assets/',
-        filename: 'react-bootstrap-modal-wrapper.js'
+        filename: 'react-with-modal.js'
     },
     resolve: {
         extensions: ['', '.js'],

@@ -1,18 +1,18 @@
-react-bootstrap-modal-wrapper
+react-with-modal
 =============================
 A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
 ## Use this bootstrap modal component if:
 - You want a lightweight component. It has no external dependencies except for React.
 - You use Bootstrap v4.
-- You prefer using higher order components to keep state out of your UI components. 
+- You prefer using higher order components to keep state out of your UI components.
 
 ## Installation
 ```javascript
-npm install --save react-bootstrap-modal-wrapper
+npm install --save react-with-modal
 ```
 ## Usage
-react-bootstrap-modal-wrapper requires you to wrap the component that has the modal with `withModal`, which passes the `modalProps` property to the wrapped component.
+react-with-modal requires you to wrap the component that has the modal with `withModal`, which passes the `modalProps` property to the wrapped component.
 
 `modalProps` has the following shape:
 
@@ -30,7 +30,7 @@ import {
   Modal
   withModal,
   propTypes as modalPropTypes
-} from 'react-bootstrap-modal-wrapper'; 
+} from 'react-with-modal';
 
 class Example extends React.Component {
   static propTypes = {
@@ -39,7 +39,7 @@ class Example extends React.Component {
       open: modalPropTypes.open
     })
   }
-  
+
   render () {
     <div>
       <Modal {...this.props.modalProps}>
