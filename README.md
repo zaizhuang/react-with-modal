@@ -1,6 +1,6 @@
 react-bootstrap-modal-wrapper
 =============================
-A [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
+A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
 ## Usage
 Install it from NPM:
