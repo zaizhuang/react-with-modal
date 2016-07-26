@@ -2,12 +2,22 @@ react-bootstrap-modal-wrapper
 =============================
 A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
-## Usage
-Install it from NPM:
+## Installation
 ```javascript
 npm install --save react-bootstrap-modal-wrapper
 ```
-Then import react-bootstrap-modal-wrapper and use it like this:
+## Usage
+react-bootstrap-modal-wrapper requires you to wrap the component that has the modal with `withModal`, which passes the `modalProps` property to the wrapped component.
+
+`modalProps` has the following shape:
+
+|Property| Type| Description|
+|--------|-----| -----------|
+|open|Function|Call this function to open the modal. Does not take any arguments.|
+|close|Function|Call this function to close the modal. Does not take any arguments.|
+|isOpen|Boolean|True when the modal is open and false otherwise|
+
+Use them like this:
 ```javascript
 // component with modal
 import React from 'react';
