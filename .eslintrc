@@ -24,6 +24,8 @@
         "it": true,
         "beforeEach": true,
         "afterEach": true,
-        "document": true
+        "document": true,
+        "window": true,
+        "setTimeout": true
     }
 }

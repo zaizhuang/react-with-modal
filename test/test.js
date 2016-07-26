@@ -1,6 +1,5 @@
 import React from 'react';
 import sinon from 'sinon';
-import jsdom from 'jsdom';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
 
@@ -9,6 +8,7 @@ import Modal from '../src/components/Modal';
 describe('Modal', function() {
     beforeEach(function () {
         this.closeFunc = sinon.spy();
+        this.openFunc = sinon.spy();
         this.component = mount(
             <Modal isOpen={false} close={this.closeFunc}>
                 <div><button onClick={this.closeFunc}/></div>
@@ -36,7 +36,15 @@ describe('Modal', function() {
         });
     });
 
-    describe('when open (isOpen is true)', function () {
+    describe('when isOpen is unchanged when props are received', function () {
+        it('should not trigger open or close', function() {
+            this.component.setProps({isOpen: false});
+            expect(this.closeFunc.called).to.equal(false);
+            expect(this.component.state('isOpen')).to.equal(false);
+        });
+    });
+
+    describe('when open (isOpen goes from false -> true)', function () {
         beforeEach(function () {
             this.component.setProps({isOpen: true});
         });
@@ -61,15 +69,29 @@ describe('Modal', function() {
             expect(this.component.find('.modal.fade.in').length).to.equal(0);
         });
 
-        describe('after 300ms', function () {
-            this.timeout(300);
+        it('should close if modal is clicked', function () {
+            this.component.find('.modal').simulate('click');
+            expect(this.closeFunc.called).to.equal(true);
+        });
 
-            it('modal should fade in', function() {
-                expect(this.component.find('.modal.fade.in').length).to.equal(1);
+        it('should not close if modal-dialog is clicked', function () {
+            this.component.find('.modal-dialog').simulate('click');
+            expect(this.closeFunc.called).to.equal(false);
+        });
+
+        describe('after 0ms', function () {
+            it('modal should fade in', function(done) {
+                setTimeout(() => {
+                    expect(this.component.find('.modal.fade.in').length).to.equal(1);
+                    done();
+                }, 0);
             });
 
-            it('modal state.isFadeIn should be true ', function() {
-                expect(this.component.state('isFadeIn')).to.equal(true);
+            it('modal state.isFadeIn should be true ', function(done) {
+                setTimeout(() => {
+                    expect(this.component.state('isFadeIn')).to.equal(true);
+                    done();
+                }, 0);
             });
 
         });
@@ -80,15 +102,53 @@ describe('Modal', function() {
                 expect(this.closeFunc.called).to.equal(true);
             });
         });
-        describe('and esc button is pressed', function () {
-            it('this.props.close is triggered', function() {
+
+        describe('and key is pressed', function () {
+            it('this.props.close is triggered when esc is pressed', function() {
                 let event = new window.KeyboardEvent('keydown', {
                     keyCode: 27
                 });
                 document.dispatchEvent(event);
                 expect(this.closeFunc.called).to.equal(true);
             });
+            it('this.props.close is not triggered when esc is not pressed', function() {
+                let event = new window.KeyboardEvent('keydown', {
+                    keyCode: 13
+                });
+                document.dispatchEvent(event);
+                expect(this.closeFunc.called).to.equal(false);
+            });
+        });
+
+        describe('when isOpen goes from true -> false', function () {
+            beforeEach(function () {
+                this.component.setProps({isOpen: false});
+            });
+
+            it('modal state.isFadeIn should be false ', function() {
+                expect(this.component.state('isFadeIn')).to.equal(false);
+            });
+
+            it('modal state.isOpen should still be true ', function() {
+                expect(this.component.state('isOpen')).to.equal(true);
+            });
+
+            describe('after 300ms', function () {
+                it('modal state.isOpen should be set to false', function(done) {
+                    setTimeout(() => {
+                        expect(this.component.state('isOpen')).to.equal(false);
+                        done();
+                    }, 300);
+                });
+
+                it('body should not have modal-open class', function(done) {
+                    setTimeout(() => {
+                        expect(document.body.className).to.equal('');
+                        done();
+                    }, 300);
+                });
+            });
+
         });
     });
-
 });
