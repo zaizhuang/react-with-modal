@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build:lib",
     "build:lib": "babel src --out-dir lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "mocha --compilers js:babel-core/register"
   },
   "author": "Zaizhuang Cheng",
   "license": "MIT",
@@ -21,8 +22,14 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.4.1",
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
+    "jsdom": "^9.4.1",
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.2.1",
+    "sinon": "^1.17.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

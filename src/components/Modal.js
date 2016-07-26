@@ -93,17 +93,15 @@ class Modal extends React.Component {
     render () {
         return (
             <div>
-                <div>
-                    <div
-                        ref="modalContainer"
-                        onClick={this.handleClick.bind(this)}
-                        className={`modal fade ${this.state.isFadeIn ? 'in' : ''}`}
-                        style={{display: this.state.isOpen ? 'block' : 'none'}}
-                    >
-                        <div className={`modal-dialog modal-${this.props.size || 'lg'}`}>
-                            <div className="modal-content">
-                                {this.props.children}
-                            </div>
+                <div
+                    ref="modalContainer"
+                    onClick={this.handleClick.bind(this)}
+                    className={`modal fade ${this.state.isFadeIn ? 'in' : ''}`}
+                    style={{display: this.state.isOpen ? 'block' : 'none'}}
+                >
+                    <div className={`modal-dialog modal-${this.props.size || 'lg'}`}>
+                        <div className="modal-content">
+                            {this.props.children}
                         </div>
                     </div>
                 </div>
