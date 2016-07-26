@@ -1,4 +1,5 @@
-/* global document */
+/* global document, window */
+
 import React from 'react';
 
 class Modal extends React.Component {
@@ -17,10 +18,13 @@ class Modal extends React.Component {
     constructor (props) {
         super(props);
         this.onEscKeyDown = this.onEscKeyDown.bind(this);
+        this.fadeIn = this.fadeIn.bind(this);
+        this.cleanUp = this.cleanUp.bind(this);
         this.state = {
             isOpen: false,
             isFadeIn: false
         };
+        this.timerIds = [];
     }
 
     componentWillUnmount() {
@@ -41,33 +45,34 @@ class Modal extends React.Component {
         if (document && document.body) {
             var orig = document.body.className;
             document.body.className = orig + ' modal-open';
-            //this.props.listeners.add('keydown', this.onEscKeyDown);
+            document.addEventListener('keydown', this.onEscKeyDown);
         }
     }
 
     cleanUp () {
+        this.setState({ isOpen: false });
         if (document && document.body) {
             document.body.className = document.body.className.replace(/ ?modal-open/, '');
-            //this.props.listeners.removeAll();
+            document.removeEventListener('keydown', this.onEscKeyDown);
         }
+        this.timerIds.forEach((timerId) => {
+            window.clearTimeout(timerId);
+        });
     }
 
     open () {
         this.setUp();
         this.setState({ isOpen: true });
-
-        //this.props.setTimeout(() => {
-        //    this.setState({ isFadeIn: true });
-        //}, 0);
+        this.timerIds.push(window.setTimeout(this.fadeIn, 0));
     }
 
     close () {
         this.setState({ isFadeIn: false });
+        this.timerIds.push(window.setTimeout(this.cleanUp, 300));
+    }
 
-        //this.props.setTimeout(() => {
-        //    this.setState({ isOpen: false });
-        //    this.cleanUp();
-        //}, 300);
+    fadeIn () {
+        this.setState({ isFadeIn: true });
     }
 
     onEscKeyDown (evt) {

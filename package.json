@@ -2,7 +2,7 @@
   "name": "react-bootstrap-modal-wrapper",
   "version": "0.1.0",
   "description": "A react wrapper for Bootstrap v4 modals",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,6 @@
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-node-externals": "^1.3.0"
+    "webpack-dev-server": "^1.14.1"
   }
 }

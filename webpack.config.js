@@ -1,13 +1,14 @@
 /* globals require, __dirname, module */
 
 var path = require('path');
-var nodeExternals = require('webpack-node-externals');
+//var nodeExternals = require('webpack-node-externals');
 //var webpack = require('webpack');
 
 const config = {
     entry: path.join(__dirname, 'index.js'),
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'build'),
+        publicPath: '/assets/',
         filename: 'react-bootstrap-modal-wrapper.js'
     },
     resolve: {
@@ -35,8 +36,8 @@ const config = {
                 }
             }
         ]
-    },
-    externals: [nodeExternals()]
+    }
+    //externals: [nodeExternals()]
 };
 
 module.exports = config;
