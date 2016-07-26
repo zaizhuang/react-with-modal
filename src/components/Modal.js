@@ -42,7 +42,7 @@ class Modal extends React.Component {
     }
 
     setUp () {
-        document.body.className = document.body.className + ' modal-open';
+        document.body.className = [document.body.className, 'modal-open'].join(' ');
         document.addEventListener('keydown', this.onEscKeyDown);
     }
 
