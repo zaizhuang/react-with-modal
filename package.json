@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-modal-wrapper",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A react wrapper for Bootstrap v4 modals",
   "main": "lib/index.js",
   "scripts": {
