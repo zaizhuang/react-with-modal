@@ -4,7 +4,7 @@
   "description": "A react wrapper for Bootstrap v4 modals",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:lib": "babel src --out-dir lib"
   },
   "author": "Zaizhuang Cheng",
   "license": "MIT",
