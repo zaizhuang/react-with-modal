@@ -36,6 +36,14 @@ class Example extends React.Component {
                         <div className="modal-body">
                             Body
                         </div>
+                        <div className="modal-footer">
+                            <button
+                                className="btn btn-secondary"
+                                onClick={this.props.modalProps.close}
+                            >
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </Modal>
                 <button
