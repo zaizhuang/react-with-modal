@@ -1,7 +1,8 @@
 import Modal from './components/Modal';
-import withModal from './wrappers/withModal';
+import withModal, { propTypes } from './wrappers/withModal';
 
 export {
     Modal,
-    withModal
+    withModal,
+    propTypes
 };
