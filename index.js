@@ -31,7 +31,7 @@ class Example extends React.Component {
                             >
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <h4 className="modal-title">Modal title</h4>
+                            <h4 className="modal-title">Modal Title</h4>
                         </div>
                         <div className="modal-body">
                             Body

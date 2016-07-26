@@ -1,8 +1,6 @@
 /* globals require, __dirname, module */
 
 var path = require('path');
-//var nodeExternals = require('webpack-node-externals');
-//var webpack = require('webpack');
 
 const config = {
     entry: path.join(__dirname, 'index.js'),
@@ -30,14 +28,13 @@ const config = {
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel', // 'babel-loader' is also a legal name to reference
+                loader: 'babel',
                 query: {
                     presets: ['react', 'es2015', 'stage-0']
                 }
             }
         ]
     }
-    //externals: [nodeExternals()]
 };
 
 module.exports = config;
