@@ -1,6 +1,8 @@
 react-with-modal
 ================
 [![npm Version](https://img.shields.io/npm/v/react-with-modal.svg)](https://www.npmjs.com/package/react-with-modal)
+[![Build Status](https://travis-ci.org/zaizhuang/react-with-modal.svg)](https://travis-ci.org/zaizhuang/react-with-modal.svg)
+[![codecov.io](https://codecov.io/github/zaizhuang/react-with-modal/coverage.svg?branch=master)](https://codecov.io/github/zaizhuang/react-with-modal?branch=master)
 
 A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
