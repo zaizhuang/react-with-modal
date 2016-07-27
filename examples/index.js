@@ -17,9 +17,6 @@ class Example extends React.Component {
     render () {
         return (
             <div className="container">
-                <h1 className="m-t-1">
-                    react-with-modal examples
-                </h1>
                 <Modal {...this.props.modalProps}>
                     <div className="modal-content">
                         <div className="modal-header">

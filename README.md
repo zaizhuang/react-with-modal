@@ -4,11 +4,11 @@ react-with-modal
 [![Build Status](https://travis-ci.org/zaizhuang/react-with-modal.svg)](https://travis-ci.org/zaizhuang/react-with-modal.svg)
 [![codecov.io](https://codecov.io/github/zaizhuang/react-with-modal/coverage.svg?branch=master)](https://codecov.io/github/zaizhuang/react-with-modal?branch=master)
 
-A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
+A lightweight [React](http://facebook.github.io/react/index.html) modal component for [Bootstrap v3](http://getbootstrap.com/) and [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
 
 ## Use this bootstrap modal component if:
 - You want a lightweight component. It has no external dependencies except for React.
-- You use Bootstrap v4.
+- You use Bootstrap 3 or 4.
 - You prefer using higher order components to keep state out of your UI components.
 
 ## Installation
@@ -66,7 +66,9 @@ export default withModal(Example);
 
 ## Styling
 
-[Bootstrap v4](http://v4-alpha.getbootstrap.com/) styles aren't included automatically with this component, and you need to add it to your app separately.
+This component works with *both* [Bootstrap v3](http://getbootstrap.com/) and [Bootstrap v4](http://v4-alpha.getbootstrap.com/).
+
+Styles aren't included automatically with this component, and you need to add it to your app separately.
 
 ## Demo & Examples
 
