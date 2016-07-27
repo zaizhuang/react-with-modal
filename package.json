@@ -1,6 +1,6 @@
 {
   "name": "react-with-modal",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A lightweight react HoC for Bootstrap v4 modals",
   "main": "lib/index.js",
   "scripts": {
@@ -9,6 +9,10 @@
     "prepublish": "npm run build",
     "test": "mocha",
     "test:cov": "./node_modules/.bin/babel-node node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- 'test/*.js' --require test/setup.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/zaizhuang/react-with-modal"
   },
   "author": "Zaizhuang Cheng",
   "license": "MIT",
