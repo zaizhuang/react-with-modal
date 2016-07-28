@@ -1,6 +1,6 @@
 {
   "name": "react-with-modal",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A lightweight React modal component for Bootstrap v4",
   "main": "lib/index.js",
   "scripts": {
