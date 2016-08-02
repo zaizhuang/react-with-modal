@@ -6,6 +6,10 @@ body {
     max-width: 36rem;
 }
 
+.bootstrap3 .container {
+    max-width: 54rem;
+}
+
 .splash {
     border-bottom: 1px solid #EEE;
 }
@@ -13,6 +17,10 @@ body {
     color: #333;
     font-size: 4rem;
     font-weight: bold;
+}
+
+.bootstrap3 .splash h1 {
+    font-size: 5rem;
 }
 
 .splash p {

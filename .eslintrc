@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": [2, 'global'],
+        "eqeqeq": 2,
+        "camelcase": 2,
+        "indent": 2,
+        "jsx-quotes": [2, 'prefer-double'],
+        "no-cond-assign": [2, 'always'],
+        "no-multi-spaces": 2,
+        "quotes": [2, 'single'],
+        "semi": [2, "always"],
+        "no-console": [2 , { allow: ["warn", "error"] }],
+        "no-debugger": 1
+    },
+    "plugins": [
+        "react"
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "globals": {
+        "console": true,
+        "Promise": true,
+        "describe": true,
+        "it": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "document": true,
+        "window": true,
+        "setTimeout": true
+    }
+}

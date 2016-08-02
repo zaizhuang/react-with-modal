@@ -21629,7 +21629,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactWithModal = __webpack_require__(/*! react-with-modal */ 173);
+	var _reactWithModal = __webpack_require__(/*! react-with-modal */ 178);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21653,62 +21653,120 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'container' },
+	                { className: 'container m-t-2' },
 	                _react2.default.createElement(
-	                    _reactWithModal.Modal,
-	                    this.props.modalProps,
+	                    'h3',
+	                    null,
+	                    'Demo'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'modal-content' },
+	                        _reactWithModal.Modal,
+	                        this.props.modalProps,
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'modal-header' },
+	                            { className: 'modal-content' },
 	                            _react2.default.createElement(
-	                                'button',
-	                                {
-	                                    type: 'button',
-	                                    className: 'close',
-	                                    'aria-label': 'Close',
-	                                    onClick: this.props.modalProps.close
-	                                },
+	                                'div',
+	                                { className: 'modal-header' },
 	                                _react2.default.createElement(
-	                                    'span',
-	                                    { 'aria-hidden': 'true' },
+	                                    'button',
+	                                    {
+	                                        type: 'button',
+	                                        className: 'close',
+	                                        onClick: this.props.modalProps.close
+	                                    },
 	                                    '×'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'h4',
+	                                    { className: 'modal-title' },
+	                                    'Modal Title'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                'h4',
-	                                { className: 'modal-title' },
-	                                'Modal Title'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'modal-body' },
-	                            'Body'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'modal-footer' },
+	                                'div',
+	                                { className: 'modal-body' },
+	                                'Body'
+	                            ),
 	                            _react2.default.createElement(
-	                                'button',
-	                                {
-	                                    className: 'btn btn-secondary',
-	                                    onClick: this.props.modalProps.close
-	                                },
-	                                'Close'
+	                                'div',
+	                                { className: 'modal-footer' },
+	                                _react2.default.createElement(
+	                                    'button',
+	                                    {
+	                                        className: 'btn btn-secondary',
+	                                        onClick: this.props.modalProps.close
+	                                    },
+	                                    'Close'
+	                                )
 	                            )
 	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'button',
+	                        {
+	                            className: 'btn btn-primary',
+	                            onClick: this.props.modalProps.open
+	                        },
+	                        'Show modal'
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'button',
-	                    {
-	                        className: 'btn btn-primary',
-	                        onClick: this.props.modalProps.open
-	                    },
-	                    'Show modal'
+	                    'p',
+	                    { className: 'm-t-2' },
+	                    'Notes:'
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        'A ',
+	                        _react2.default.createElement(
+	                            'code',
+	                            null,
+	                            'modal-open'
+	                        ),
+	                        ' class is added to body when modal is open.'
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        'Modal closes when \'esc\' key is pressed, or a click happens outside of ',
+	                        _react2.default.createElement(
+	                            'code',
+	                            null,
+	                            'modal-dialog'
+	                        ),
+	                        '.'
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        'Unlike Bootstrap, padding is not added to prevent screen width from changing due to scroll bar being hidden.'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                        'h3',
+	                        { className: 'm-t-2' },
+	                        'Code'
+	                    ),
+	                    _react2.default.createElement(
+	                        'pre',
+	                        null,
+	                        _react2.default.createElement(
+	                            'code',
+	                            { className: 'language-javascript' },
+	                            'import {\n    Modal,\n    withModal,\n    propTypes as modalPropTypes\n} from \'react-with-modal\';\n\nclass ButtonContainer extends React.Component {\n  static propTypes = {\n    modalProps: React.PropTypes.shape({\n      close: modalPropTypes.close,\n      open: modalPropTypes.open\n    })\n  }\n  render () {\n    return (\n      <div>\n        <Modal {...this.props.modalProps}>\n          <div className="modal-content">\n            <div className="modal-header">\n              // header content\n            </div>\n            <div className="modal-body">\n              // body content\n            </div>\n            <div className="modal-footer">\n              <button\n                onClick={this.props.modalProps.close}\n              >\n                Close\n              </button>\n            </div>\n          </div>\n        </Modal>\n        <button\n          onClick={this.props.modalProps.open}\n        >\n          Show modal\n        </button>\n      </div>\n    );\n  }\n}'
+	                        )
+	                    )
 	                )
 	            );
 	        }
@@ -21731,7 +21789,12 @@
 	exports.default = AppWithModal;
 
 /***/ },
-/* 173 */
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */
 /*!*****************************************!*\
   !*** ./~/react-with-modal/lib/index.js ***!
   \*****************************************/
@@ -21744,11 +21807,11 @@
 	});
 	exports.propTypes = exports.withModal = exports.Modal = undefined;
 	
-	var _Modal = __webpack_require__(/*! ./components/Modal */ 174);
+	var _Modal = __webpack_require__(/*! ./components/Modal */ 179);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _withModal = __webpack_require__(/*! ./wrappers/withModal */ 175);
+	var _withModal = __webpack_require__(/*! ./wrappers/withModal */ 180);
 	
 	var _withModal2 = _interopRequireDefault(_withModal);
 	
@@ -21759,7 +21822,7 @@
 	exports.propTypes = _withModal.propTypes;
 
 /***/ },
-/* 174 */
+/* 179 */
 /*!****************************************************!*\
   !*** ./~/react-with-modal/lib/components/Modal.js ***!
   \****************************************************/
@@ -21912,7 +21975,7 @@
 	exports.default = Modal;
 
 /***/ },
-/* 175 */
+/* 180 */
 /*!******************************************************!*\
   !*** ./~/react-with-modal/lib/wrappers/withModal.js ***!
   \******************************************************/
