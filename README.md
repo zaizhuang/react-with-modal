@@ -72,6 +72,8 @@ Styles aren't included automatically with this component, and you need to add it
 
 ## Demo & Examples
 
+View demo at [https://zaizhuang.github.io/react-with-modal](https://zaizhuang.github.io/react-with-modal).
+
 To build the examples locally, clone this repo and run:
 
 ```javascript
